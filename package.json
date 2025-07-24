@@ -2,6 +2,9 @@
   "name": "egami",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "build": "bun build --compile --bytecode src/index.ts --outfile egami"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

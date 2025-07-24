@@ -1,5 +1,7 @@
 # egami
 
+⚠️ **Work in Progress** - This package is currently under active development. Do not use it if you are reading this warning. 
+
 To install dependencies:
 
 ```bash
@@ -100,5 +102,45 @@ egami dcm2png -i /path/to/dicom/series -o slice10.png -s 10
 - Support for compressed DICOM files
 - Handles grayscale, RGB, and RGBA pixel formats
 - Directory support with automatic DICOM file detection and sorting
+
+</details>
+
+<details>
+<summary><strong>dcm2nii</strong> - Convert DICOM files to NIFTI format</summary>
+
+### Description
+Converts DICOM files to NIFTI (.nii) format. Supports single DICOM files, enhanced DICOM files with multiple frames, and directories containing DICOM series. Automatically groups files by series and handles both 3D and 4D datasets.
+
+### Usage
+```bash
+egami dcm2nii -i <input> [options]
+```
+
+### Options
+- `-i, --input <path>` - Input DICOM file or directory path (required)
+- `-o, --output <path>` - Output NIFTI file or directory path (optional)
+
+### Examples
+```bash
+# Convert single DICOM file to NIFTI
+egami dcm2nii -i scan.dcm -o scan.nii
+
+# Convert enhanced DICOM with multiple frames
+egami dcm2nii -i multiframe.dcm -o volume.nii
+
+# Convert entire DICOM directory (groups by series)
+egami dcm2nii -i /path/to/dicom/series
+
+# Convert directory with custom output location
+egami dcm2nii -i /path/to/dicom/series -o /output/directory
+```
+
+### Features
+- Automatic series detection and grouping by SeriesInstanceUID
+- Support for 3D and 4D NIFTI output (including time-series DWI data)
+- Handles enhanced DICOM files with multiple frames per file
+- Preserves spatial resolution and orientation information
+- Automatic filename generation based on series description
+- Robust pixel data handling for various DICOM formats
 
 </details>
