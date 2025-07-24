@@ -1,0 +1,19 @@
+{
+  "name": "egami",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/pngjs": "^6.0.5",
+    "commander": "^14.0.0",
+    "dcmjs": "^0.43.1",
+    "dcmjs-imaging": "^0.2.1",
+    "nifti-reader-js": "^0.8.0",
+    "pngjs": "^7.0.0"
+  }
+}
